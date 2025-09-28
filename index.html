@@ -1,18 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-g">
-    <title>Download Laptop Battery App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Laptop Battery</title>
     <style>
-        body { font-family: system-ui, sans-serif; text-align: center; padding-top: 50px; }
-        .download-button { display: inline-block; padding: 15px 30px; background-color: #007bff; color: white; text-decoration: none; font-size: 1.2em; border-radius: 8px; }
+        /* Base Styles */
+        :root {
+            --light-bg: linear-gradient(to bottom, #f5f5f7, #e8e8ed);
+            --light-card-bg: rgba(255, 255, 255, 0.7);
+            --light-text-primary: #1d1d1f;
+            --light-text-secondary: #6e6e73;
+
+            --dark-bg: linear-gradient(to bottom, #1c1c1e, #111111);
+            --dark-card-bg: rgba(44, 44, 46, 0.7);
+            --dark-text-primary: #f5f5f7;
+            --dark-text-secondary: #8e8e93;
+            
+            --button-gradient: linear-gradient(to right, #007aff, #af52de);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+            background: var(--light-bg);
+            color: var(--light-text-primary);
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* Dark Mode */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: var(--dark-bg);
+                color: var(--dark-text-primary);
+            }
+            .card {
+                background: var(--dark-card-bg);
+            }
+            .card p {
+                color: var(--dark-text-secondary);
+            }
+        }
+
+        .card {
+            text-align: center;
+            background: var(--light-card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+        }
+
+        .card h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin: 0 0 10px;
+        }
+        
+        .card p {
+            font-size: 1.1em;
+            color: var(--light-text-secondary);
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .download-button {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            font-size: 1.1em;
+            font-weight: 600;
+            padding: 15px 35px;
+            border-radius: 30px;
+            background: var(--button-gradient);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .download-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
     </style>
 </head>
 <body>
-    <img src="your-app-icon.png" alt="App Icon" width="100">
-    <h1>Laptop Battery</h1>
-    <p>Monitor your laptop's battery from your iPhone, anywhere.</p>
-    <a href="URL_TO_YOUR_MACOS_DMG_ON_GITHUB_RELEASES" class="download-button">Download for macOS</a>
-    <a href="URL_TO_YOUR_WINDOWS_EXE_ON_GITHUB_RELEASES" class="download-button">Download for Windows</a>
+
+    <div class="card">
+        <img src="your-app-icon.png" alt="Laptop Battery App Icon" class="app-icon">
+        <h1>Laptop Battery</h1>
+        <p>Monitor your laptop's battery status directly from your iPhone.</p>
+        <a href="URL_TO_YOUR_WINDOWS_ZIP_ON_GITHUB_RELEASES" class="download-button">Download for Windows</a>
+    </div>
+
 </body>
 </html>
