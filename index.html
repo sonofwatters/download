@@ -10,18 +10,17 @@
             /* Light Mode Colors */
             --light-bg: linear-gradient(to bottom, #f5f5f7, #e0e0e5);
             --light-card-bg: #ffffff;
-            --light-text-primary: #1d1d1f; /* Nearly black for high contrast */
-            --light-text-secondary: #5a5a5d; /* Darker gray for readability */
-
+            --light-text-primary: #1d1d1f;
+            --light-text-secondary: #5a5a5d;
             /* Dark Mode Colors */
             --dark-bg: linear-gradient(to bottom, #0a0a0a, #1a1a1a);
-            --dark-card-bg: #1c1c1e; /* Darker card for a more integrated feel */
-            --dark-text-primary: #f5f5f7; /* Off-white for high contrast */
+            --dark-card-bg: #1c1c1e;
+            --dark-text-primary: #f5f5f7;
             --dark-text-secondary: #aeaeb2;
             
             --button-gradient: linear-gradient(to right, #007aff, #af52de);
+            --link-color: #007aff;
         }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
             margin: 0;
@@ -35,7 +34,6 @@
             color: var(--light-text-primary);
             transition: background 0.3s, color 0.3s;
         }
-
         /* Dark Mode */
         @media (prefers-color-scheme: dark) {
             body {
@@ -50,24 +48,32 @@
             .card p {
                 color: var(--dark-text-secondary);
             }
+            .privacy-content h2 {
+                color: var(--dark-text-primary);
+            }
+            .privacy-content h3 {
+                color: var(--dark-text-primary);
+            }
         }
-
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
         .card {
             text-align: center;
             background: var(--light-card-bg);
             padding: 50px 40px;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            max-width: 420px; /* Slightly wider for new title */
+            max-width: 420px;
             width: 100%;
+            margin: 0 auto 30px;
         }
-
         .card h1 {
-            /* Responsive font size for the longer title */
             font-size: clamp(1.8em, 5vw, 2.4em); 
             font-weight: 700;
             margin: 0 0 15px;
-            color: var(--light-text-primary); /* Explicitly set color */
+            color: var(--light-text-primary);
         }
         
         .card p {
@@ -77,7 +83,6 @@
             line-height: 1.6;
             padding: 0 10px;
         }
-
         .download-button {
             display: inline-block;
             text-decoration: none;
@@ -90,21 +95,324 @@
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-
         .download-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
-
+        .privacy-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.95em;
+            color: var(--link-color);
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        .privacy-link:hover {
+            opacity: 0.7;
+        }
+        
+        /* Privacy Policy Styles */
+        .privacy-section {
+            background: var(--light-card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            max-width: 800px;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .privacy-section {
+                background: var(--dark-card-bg);
+            }
+        }
+        
+        .privacy-content {
+            text-align: left;
+            line-height: 1.7;
+        }
+        
+        .privacy-content h2 {
+            font-size: 2em;
+            font-weight: 700;
+            margin: 0 0 10px;
+            color: var(--light-text-primary);
+        }
+        
+        .privacy-content h3 {
+            font-size: 1.4em;
+            font-weight: 600;
+            margin: 30px 0 15px;
+            color: var(--light-text-primary);
+        }
+        
+        .privacy-content h4 {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin: 20px 0 10px;
+            color: var(--light-text-secondary);
+        }
+        
+        .privacy-content p {
+            margin: 15px 0;
+            color: var(--light-text-secondary);
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .privacy-content p {
+                color: var(--dark-text-secondary);
+            }
+        }
+        
+        .privacy-content ul {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        
+        .privacy-content li {
+            margin: 8px 0;
+            color: var(--light-text-secondary);
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .privacy-content li {
+                color: var(--dark-text-secondary);
+            }
+        }
+        
+        .privacy-content strong {
+            font-weight: 600;
+            color: var(--light-text-primary);
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .privacy-content strong {
+                color: var(--dark-text-primary);
+            }
+        }
+        
+        .privacy-content a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+        
+        .privacy-content a:hover {
+            text-decoration: underline;
+        }
+        
+        .last-updated {
+            font-style: italic;
+            color: var(--light-text-secondary);
+            margin-bottom: 30px;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .last-updated {
+                color: var(--dark-text-secondary);
+            }
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: var(--link-color);
+            text-decoration: none;
+            font-size: 1em;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            margin: 30px 0;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            hr {
+                border-top-color: rgba(255, 255, 255, 0.1);
+            }
+        }
     </style>
 </head>
 <body>
-
-    <div class="card">
-        <h1>Laptop Battery Widget for iPhone</h1>
-        <p>This program sends your laptop's battery status to the cloud so the companion iPhone widget can display it.</p>
-        <a href="https://github.com/sonofwatters/download/releases/download/v1/LaptopBatteryMonitor-Setup.zip" class="download-button">Download for Windows</a>
+    <div class="container">
+        <div class="card">
+            <h1>Laptop Battery Widget for iPhone</h1>
+            <p>This program sends your laptop's battery status to the cloud so the companion iPhone widget can display it.</p>
+            <a href="https://github.com/sonofwatters/download/releases/download/v1/LaptopBatteryMonitor-Setup.zip" class="download-button">Download for Windows</a>
+            <a href="#privacy" class="privacy-link">Privacy Policy</a>
+        </div>
+        
+        <div class="privacy-section" id="privacy">
+            <div class="privacy-content">
+                <a href="#" class="back-link">← Back to Download</a>
+                
+                <h2>Privacy Policy for Laptop Battery Widget</h2>
+                <p class="last-updated"><strong>Last Updated:</strong> September 29, 2025</p>
+                
+                <h3>Introduction</h3>
+                <p>Laptop Battery Widget ("we," "our," or "the app") is committed to protecting your privacy. This Privacy Policy explains how our iOS application collects, uses, and safeguards your information.</p>
+                
+                <h3>Information We Collect</h3>
+                
+                <h4>Information You Provide</h4>
+                <ul>
+                    <li><strong>Device Pairing Information:</strong> When you pair your iPhone with your laptop, we collect and store:
+                        <ul>
+                            <li>A unique device identifier</li>
+                            <li>Server connection details</li>
+                            <li>Authentication credentials (secret keys)</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h4>Automatically Collected Information</h4>
+                <ul>
+                    <li><strong>Battery Status Data:</strong> We collect your laptop's battery information including:
+                        <ul>
+                            <li>Battery percentage</li>
+                            <li>Charging status</li>
+                            <li>Last update timestamp</li>
+                        </ul>
+                    </li>
+                    <li><strong>Push Notification Token:</strong> Your Apple Push Notification Service (APNS) token to enable real-time battery updates</li>
+                    <li><strong>Debug Logs</strong> (Optional): If you enable Developer Mode, diagnostic information about app updates and refresh events</li>
+                </ul>
+                
+                <h3>How We Use Your Information</h3>
+                <p>We use the collected information solely to:</p>
+                <ul>
+                    <li>Display your laptop's battery status on your iPhone</li>
+                    <li>Send push notifications with battery updates</li>
+                    <li>Update the home screen widget with current battery information</li>
+                    <li>Enable background refresh functionality</li>
+                    <li>Provide debugging information when Developer Mode is enabled</li>
+                </ul>
+                
+                <h3>Data Storage and Security</h3>
+                
+                <h4>Local Storage</h4>
+                <ul>
+                    <li>All battery data and pairing credentials are stored locally on your device using iOS's secure storage mechanisms</li>
+                    <li>Data is stored in an App Group container shared between the main app and widget extension</li>
+                    <li>No battery status data is stored on external servers beyond temporary caching</li>
+                </ul>
+                
+                <h4>Server Communication</h4>
+                <ul>
+                    <li>The app communicates with a server you specify during pairing (typically running on your laptop)</li>
+                    <li>All server communications use authentication headers to verify identity</li>
+                    <li>Connection details are encrypted using iOS's standard security features</li>
+                </ul>
+                
+                <h4>Data Retention</h4>
+                <ul>
+                    <li>Battery data is retained only as long as you remain paired with your laptop</li>
+                    <li>When you disconnect your device through the app settings, all pairing data and battery history are deleted</li>
+                    <li>Debug logs (if enabled) retain up to 50 recent update events</li>
+                </ul>
+                
+                <h3>Data Sharing</h3>
+                <p><strong>We do not share, sell, rent, or trade your information with third parties.</strong></p>
+                <p>The app operates as follows:</p>
+                <ul>
+                    <li>Battery data flows only between your laptop and your iPhone</li>
+                    <li>No analytics or tracking services are used</li>
+                    <li>No advertising networks have access to your data</li>
+                    <li>No data is transmitted to third parties beyond standard Apple services (APNS)</li>
+                </ul>
+                
+                <h3>Your Rights and Choices</h3>
+                <p>You have the right to:</p>
+                <ul>
+                    <li><strong>Disconnect:</strong> Remove the pairing between your laptop and iPhone at any time through app settings</li>
+                    <li><strong>Delete Data:</strong> All local data is deleted when you disconnect your device</li>
+                    <li><strong>Control Notifications:</strong> Manage push notification permissions through iOS Settings</li>
+                    <li><strong>Control Background Refresh:</strong> Enable or disable background app refresh through iOS Settings</li>
+                    <li><strong>Access Debug Information:</strong> View update logs when Developer Mode is enabled</li>
+                </ul>
+                
+                <h3>Children's Privacy</h3>
+                <p>Laptop Battery Widget is not directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with information, please contact us, and we will delete such information.</p>
+                
+                <h3>Third-Party Services</h3>
+                
+                <h4>Apple Services</h4>
+                <p>The app uses the following Apple services:</p>
+                <ul>
+                    <li><strong>Apple Push Notification Service (APNS):</strong> To deliver battery status updates</li>
+                    <li><strong>WidgetKit:</strong> To display battery information on your home screen</li>
+                    <li><strong>Background Tasks:</strong> To refresh battery data when the app is not active</li>
+                </ul>
+                <p>Apple's use of your information is governed by Apple's Privacy Policy, available at <a href="https://www.apple.com/legal/privacy/" target="_blank">https://www.apple.com/legal/privacy/</a></p>
+                
+                <h4>QR Code Scanning</h4>
+                <p>The app uses device camera access solely for scanning QR codes during the pairing process. Camera data is processed locally and is not stored or transmitted.</p>
+                
+                <h3>Changes to This Privacy Policy</h3>
+                <p>We may update this Privacy Policy from time to time. We will notify you of any changes by:</p>
+                <ul>
+                    <li>Updating the "Last Updated" date at the top of this policy</li>
+                    <li>Displaying a notice in the app when significant changes occur</li>
+                </ul>
+                <p>Your continued use of the app after changes are made constitutes acceptance of the updated policy.</p>
+                
+                <h3>Open Source</h3>
+                <p>This app's source code may be made available under an open-source license. Any use of the code is subject to the terms of that license and this Privacy Policy.</p>
+                
+                <h3>Data Security</h3>
+                <p>We implement appropriate technical and organizational measures to protect your information:</p>
+                <ul>
+                    <li>Secure authentication using secret keys</li>
+                    <li>Local encryption of sensitive data using iOS security features</li>
+                    <li>Secure HTTPS communication with your laptop server</li>
+                    <li>No permanent storage of credentials on remote servers</li>
+                </ul>
+                <p>However, no method of electronic storage is 100% secure. While we strive to protect your information, we cannot guarantee absolute security.</p>
+                
+                <h3>International Users</h3>
+                <p>The app is designed for personal use and operates through a direct connection between your devices. Data does not leave your personal network unless you configure your laptop server to be accessible externally.</p>
+                
+                <h3>Contact Us</h3>
+                <p>If you have questions or concerns about this Privacy Policy or our data practices, please contact us at:</p>
+                <p><strong>Email:</strong> [Your Contact Email]<br>
+                <strong>Website:</strong> [Your Website or GitHub Repository]</p>
+                
+                <h3>Consent</h3>
+                <p>By using Laptop Battery Widget, you consent to this Privacy Policy and agree to its terms.</p>
+                
+                <hr>
+                
+                <h3>California Privacy Rights (CCPA)</h3>
+                <p>If you are a California resident, you have additional rights under the California Consumer Privacy Act:</p>
+                <ul>
+                    <li>Right to know what personal information is collected</li>
+                    <li>Right to delete personal information</li>
+                    <li>Right to opt-out of sale of personal information (we do not sell information)</li>
+                </ul>
+                <p>To exercise these rights, please contact us using the information provided above.</p>
+                
+                <h3>European Users (GDPR)</h3>
+                <p>If you are located in the European Economic Area, you have rights under the General Data Protection Regulation:</p>
+                <ul>
+                    <li>Right to access your personal data</li>
+                    <li>Right to rectification of inaccurate data</li>
+                    <li>Right to erasure ("right to be forgotten")</li>
+                    <li>Right to restrict processing</li>
+                    <li>Right to data portability</li>
+                    <li>Right to object to processing</li>
+                </ul>
+                <p>The legal basis for processing your data is your consent, which you provide by using the app and completing the pairing process.</p>
+                
+                <hr>
+                
+                <p><strong>Effective Date:</strong> September 29, 2025</p>
+            </div>
+        </div>
     </div>
-
 </body>
 </html>
