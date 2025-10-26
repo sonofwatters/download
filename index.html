@@ -48,6 +48,17 @@
             .card p {
                 color: var(--dark-text-secondary);
             }
+            /* Style for new section in dark mode */
+            .install-info h3 {
+                color: var(--dark-text-primary) !important;
+            }
+            .install-info p {
+                color: var(--dark-text-secondary) !important;
+            }
+            .install-info img {
+                border-color: rgba(255,255,255,0.1) !important;
+            }
+            /* End new section styles */
             .privacy-content h2 {
                 color: var(--dark-text-primary);
             }
@@ -243,7 +254,17 @@
         <div class="card">
             <h1>Laptop Battery Widget for iPhone</h1>
             <p>This program sends your laptop's battery status to the cloud so the companion iPhone widget can display it.</p>
-            <a href="https://github.com/sonofwatters/download/releases/download/v1.0.0.0/installTest.EXE" class="download-button">Download for Windows</a>
+            <a href="https://github.com/sonofwatters/download/releases/download/v1/LaptopBatteryMonitor-Setup.zip" class="download-button">Download for Windows</a>
+            
+            <div class="install-info" style="margin-top: 40px; text-align: left; padding: 0 10px;">
+                <h3 style="font-size: 1.2em; font-weight: 600; text-align: center; color: var(--light-text-primary); margin-bottom: 15px;">A Note on Installation</h3>
+                <p style="font-size: 0.95em; line-height: 1.6; color: var(--light-text-secondary); margin-bottom: 20px;">
+                    You might see a "Windows protected your PC" message. Because this is a new app from an independent developer, Windows doesn't recognize it yet. This is normal, and the app is safe to install.
+                    <br><br>
+                    To proceed, simply click <strong>"More info"</strong> on the first screen, and then click <strong>"Run anyway"</strong> on the second.
+                </p>
+                <img src="image_4af07e.png" alt="How to bypass Windows SmartScreen warning" style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid rgba(0,0,0,0.1);">
+            </div>
             <a href="#privacy" class="privacy-link">Privacy Policy</a>
         </div>
         
