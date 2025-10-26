@@ -118,6 +118,7 @@
             color: var(--link-color);
             text-decoration: none;
             transition: opacity 0.2s;
+            cursor: pointer; /* Change cursor to pointer */
         }
         .privacy-link:hover {
             opacity: 0.7;
@@ -131,6 +132,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             margin: 0 auto;
             max-width: 800px;
+            display: none; /* Hide by default */
         }
         
         @media (prefers-color-scheme: dark) {
@@ -230,6 +232,7 @@
             color: var(--link-color);
             text-decoration: none;
             font-size: 1em;
+            cursor: pointer; /* Change cursor to pointer */
         }
         
         .back-link:hover {
@@ -435,5 +438,28 @@
             </div>
         </div>
     </div>
-</body>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const downloadCard = document.querySelector('.card');
+            const privacySection = document.querySelector('.privacy-section');
+            const showPrivacyLink = document.querySelector('.privacy-link');
+            const hidePrivacyLink = document.querySelector('.back-link');
+
+            showPrivacyLink.addEventListener('click', (event) => {
+                event.preventDefault(); // Stop the link from jumping
+                downloadCard.style.display = 'none';
+                privacySection.style.display = 'block';
+                window.scrollTo(0, 0); // Scroll to top
+            });
+
+            hidePrivacyLink.addEventListener('click', (event) => {
+                event.preventDefault(); // Stop the link from jumping
+                privacySection.style.display = 'none';
+                downloadCard.style.display = 'block';
+                window.scrollTo(0, 0); // Scroll to top
+            });
+        });
+    </script>
+    </body>
 </html>
